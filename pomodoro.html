@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">    
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="pomodoro.css">
+    <title>Pomodoro Clock</title>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="session-panel active">
+        <div class="panel-name">Session Length</div>
+        <div id="session-length-controls" class="timer-settings">
+          <span data-state="session" class="minus">-</span>
+          <span data-state="session" id="session-length" class="timer-length">25</span>
+          <span data-state="session" class="plus">+</span>       
+        </div>
+      </div>
+      <div class="break-panel">
+        <div class="panel-name">Break Length</div>
+        <div id="break-length-controls" class="timer-settings">
+          <span data-state="break" class="minus">-</span>
+          <span data-state="break" id="break-length" class="timer-length">5</span>
+          <span data-state="break" class="plus">+</span>
+        </div>
+      </div>
+      <div id="timer" data-seconds="1500">00:25:00</div>
+      <div id="progress-bar">
+        <div class="progress">
+        </div>
+      </div>
+    </div>
+    <script src="pomodoro.js"></script>
+  </body>
+</html>

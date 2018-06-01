@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    position: relative; /* establish containing block */
+    background-color: rgb(87, 102, 116, 0.7);
+    
+    height: 100vh;
+    font-family: Lato;
+    font-weight: 400;
+    color: #555;    
+}
+
+.wrapper {
+    position: absolute; /* relative to body */
+    width: 1000px;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);    
+    transform: translate(-50%, -50%);
+    overflow: hidden; /* ??? */    
+}
+
+.break-panel,
+.session-panel {
+    width: 50%;
+    float: left;
+    height: 300px;
+    padding: 40px;
+
+    font-size: 40px;
+    font-weight: 200;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.timer-settings {
+    margin-top: 10%;
+    font-size: 60px;
+}
+
+.timer-length {
+    padding: 0 25px;
+}
+
+.active {
+    background-color: #eaeef2;
+}
+
+.panel-name {
+    position:relative;
+}
+
+.active .panel-name {
+    font-weight: 300;
+}
+
+.active .panel-name::after {
+    content: "\2022";
+    font-size: 47px;
+    position: absolute;
+    color: #576674;    
+    top: -7px;
+    right: 0px;
+}
+
+.active .panel-name::before {
+    content: "\2022";
+    font-size: 47px;
+    position: absolute;
+    color: #576674;    
+    top: -7px;
+    left: 0px;
+}
+
+div#timer {
+    clear: both;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 200;
+    padding: 10px;
+    background-color: #576674;
+    color: white;
+    /*border-top: 1px solid #f1f1f1;*/
+}
+
+div#timer:hover {
+    cursor: pointer;
+}
+
+div#progress-bar {
+    height: 110px;
+}
+
+.progress {
+    background-color: #EB4D4D;
+    height: 110px;
+    width: 0%;
+}
+
+.minus {
+    padding-right: 20px;
+}
+
+.plus {
+    padding-left: 20px;
+}
+
+.plus:hover,
+.minus:hover {
+    cursor: pointer;
+}
+
+/* get rid of annoying blue highlighting when clicking */
+.timer-settings {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+}
+
+:focus {
+    outline: none !important;
+}
+
